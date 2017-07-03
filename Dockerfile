@@ -1,23 +1,25 @@
 FROM rocker/rstudio:latest
 
+# Removed the following packages from the install list:
+# E: Package 'biblatex' has no installation candidate
+# E: Unable to locate package libatlas3gf-base
+# E: Unable to locate package libgdal1-dev
+# E: Package 'libmyodbc' has no installation candidate
+# E: Unable to locate package libmysqlclient15-dev
+# E: Package 'libproc-dev' has no installation candidate
+
 RUN apt-get update -qq && \
     apt-get install -y \
     zlib1g-dev \
     libssh2-1-dev \
     libxml2-dev \
-    biblatex \
     curl \
     jags \
-    libatlas3gf-base \
     libcairo2 \
     libcairo2-dev \
     libfftw3-dev \
-    libgdal1-dev \
     libgraphviz-dev \
-    libmyodbc \
-    libmysqlclient15-dev \
     libnetcdf-dev \
-    libproc-dev \
     libproj-dev \
     libprotoc-dev \
     libxml2-dev \
