@@ -48,11 +48,11 @@ RUN R -e "devtools::install_github('MEP-LINCS/MEMA')"
 
 ## (3) Install the rest of R packages for running MEMA vignettes 
 # RUN R -e "source('http://depot.sagebase.org/CRAN.R'); pkgInstall('synapseClient')"
+RUN R -e "devtools::install_github('Sage-Bionetworks/rSynapseClient')"
 RUN R -e "install.packages('ggplot2', repos = 'http://cran.us.r-project.org')"
 RUN R -e "source('http://bioconductor.org/biocLite.R'); biocLite('RUVnormalize')"
 RUN R -e "install.packages(c('ruv', 'plotly', 'RColorBrewer'), repos = 'http://cran.us.r-project.org')"
 RUN R -e "install.packages('lme4', repos = 'http://cran.us.r-project.org')"
 RUN R -e "install.packages(c('flexmix', 'fpc', 'dendextend', 'd3heatmap'), repos = 'http://cran.us.r-project.org')"
-RUN R -e "devtools::install_github('Sage-Bionetworks/rSynapseClient')"
 
 
