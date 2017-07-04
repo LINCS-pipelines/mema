@@ -53,5 +53,6 @@ RUN R -e "source('http://bioconductor.org/biocLite.R'); biocLite('RUVnormalize')
 RUN R -e "install.packages(c('ruv', 'plotly', 'RColorBrewer'), repos = 'http://cran.us.r-project.org')"
 RUN R -e "install.packages('lme4', repos = 'http://cran.us.r-project.org')"
 RUN R -e "install.packages(c('flexmix', 'fpc', 'dendextend', 'd3heatmap'), repos = 'http://cran.us.r-project.org')"
+RUN R -e "devtools::install_github('Sage-Bionetworks/rSynapseClient')"
 
 
