@@ -11,4 +11,4 @@ sudo docker run -d -p <available port>:8787 -v </a/path/to/mount/>:/opt/ ucbd2k/
 ```
 
 Then through a browser go to ```<host url>:<available port as specified above>```.
-User name and password are rstudio/rstudio
+Username/Password are rstudio/rstudio
