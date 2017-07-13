@@ -1,5 +1,5 @@
 # mema
-Docker container for MEMA package
+Docker container for MEMA package.
 This docker image is built based on the latest validated MEMA package.
 Here is how to obtain and run it:
 
