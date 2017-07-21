@@ -1,4 +1,4 @@
-FROM rocker/rstudio-stable:devel
+FROM rocker/rstudio-stable:3.4.1
 
 RUN apt-get update -qq && \
     apt-get install -y \
