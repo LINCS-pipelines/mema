@@ -5,7 +5,7 @@ This mema docker image was built based on the validated MEMA R package v1.0.1 (r
 The docker has been tested on Linux (Ubuntu 14.04 and 16.04), macOS (10.11.6), and Windows (Windows 7 Enterprise). 
 
 ---
-##### Installation of Docker
+#### Installation of Docker
 
 Ubuntu: follow [`the instructions`](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/) to get Docker CE for Ubuntu.
 
