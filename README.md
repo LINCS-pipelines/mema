@@ -28,14 +28,29 @@ On Mac, click Docker whale icon in Launchpad or Applications folder to start Doc
 On Windows, double-click Open Oracle VM VirtualBox icon on desktop, choose Settings -> System -> Motherboard to increase Base Memory to 4096 MB. 
 
 ```
-[sudo] docker run -d -p <an available port>:8787 [-v <full path of a mount directory>:/opt] ucbd2k/mema
+[sudo] docker run -d -p <an available port>:8787 ucbd2k/mema
 ```
-Optional argument `-v <full path of a mount directory>:/opt`: a directory can be mounted to a mount point (`/opt`, for instance) for file I/O in the mema docker. The mounted directory must be made readable and writable to the virtual RStudio. 
+Typically one can use port 8787 if not already used by another application. In that case the commad is
+
+```
+[sudo] docker run -d -p 8787:8787 ucbd2k/mema
+
+```
 
 ---
-To run mema docker, open a browser and type in the address bar ``<Host URL>:<available port as specified>`` to start RStudio. Enter `rstudio` for both username and password.
+To run mema docker, open a browser and type in the address bar ``<Host URL>:<available port as specified>`` to start RStudio. Enter `rstudio` for both username and password. For example http://localhost:8787 on Mac or Linux systems when 8787 port is used.
 
-Host URL on Ubuntu or Mac is `localhost`, if accessed locally. On Windows, the IP is shown when Docker is launched by double-clicking the Docker Quickstart Terminal icon on desktop, or it can be obtained from the output of `docker-machine ls` in the interactive shell window.
+Host URL on Ubuntu and Mac is `localhost`, if accessed locally. On Windows, the IP is shown when Docker is launched by double-clicking the Docker Quickstart Terminal icon on desktop, or it can be obtained from the output of `docker-machine ls` in the interactive shell window.
 
-In the Synapse login step of the MEMA vignettes, supply your own login credential to `synapseLogin()`, since the `~/.synapseConfig` file does not exist for 'rstudio' user in the mema docker.
+To execute MEMA package vignettes, you need to first create Synapse id and password at [`https://www.synapse.org/`] (https://www.synapse.org/) and then create synapseConfig file with your login credentials. For example, if the user id is "john.doe@fake.com" and password is "pass123", following R command executed in the R studio will create the appropriate config file:
+```
+cat(file="~/.synapseConfig", "[authentication]", "\n", "username:john.doe@fake.com", "\n", "password:pass123", "\n")
+
+```
+Now you can run the vignettes by opening MEMA vignettes files in the RStudio session(
+/usr/local/lib/R/site-library/MEMA/doc/Preprocess-Levels1and2.Rmd and Preprocess-Levels3and4.html) and execute chuncks of code or the whole markdown scripts as described in the MEMA package page.
+
+
+
+
 
