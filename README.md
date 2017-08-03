@@ -48,7 +48,7 @@ cat(file="~/.synapseConfig", "[authentication]", "\n", "username:john.doe@fake.c
 
 ```
 Now you can run the vignettes by opening MEMA vignettes files in the RStudio session(
-/usr/local/lib/R/site-library/MEMA/doc/Preprocess-Levels1and2.Rmd and Preprocess-Levels3and4.html) and execute chuncks of code or the whole markdown scripts as described in the MEMA package page.
+/usr/local/lib/R/site-library/MEMA/doc/Preprocess-Levels1and2.Rmd and /usr/local/lib/R/site-library/MEMA/doc/Preprocess-Levels3and4.html) and execute chuncks of code or the whole markdown scripts as described in the MEMA package page.
 
 
 
