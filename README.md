@@ -34,7 +34,6 @@ Typically one can use port 8787 if not already used by another application. In t
 
 ```
 [sudo] docker run -d -p 8787:8787 ucbd2k/mema
-
 ```
 
 ---
