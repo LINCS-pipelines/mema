@@ -42,7 +42,7 @@ To run mema docker, open a browser and type in the address bar ``<Host URL>:<ava
 
 Host URL on Ubuntu and Mac is `localhost`, if accessed locally. On Windows, the IP is shown when Docker is launched by double-clicking the Docker Quickstart Terminal icon on desktop, or it can be obtained from the output of `docker-machine ls` in the interactive shell window.
 
-To execute MEMA package vignettes, you need to first create Synapse id and password at [`https://www.synapse.org/`] (https://www.synapse.org/) and then create synapseConfig file with your login credentials. For example, if the user id is "john.doe@fake.com" and password is "pass123", following R command executed in the R studio will create the appropriate config file:
+To execute MEMA package vignettes, you need to first create Synapse id and password at [`https://www.synapse.org/`] (https://www.synapse.org/) and then create synapseConfig file with your login credentials. For example, if the user id is ```john.doe@fake.com``` and password is "pass123", following R command executed in the R studio will create the appropriate config file:
 ```
 cat(file="~/.synapseConfig", "[authentication]", "\n", "username:john.doe@fake.com", "\n", "password:pass123", "\n")
 
