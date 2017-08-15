@@ -19,13 +19,15 @@ To obtain the docker image and run the container,
 ```
 [sudo] docker pull ucbd2k/mema
 ```
-Ubuntu user may need to use `sudo` to run Docker.
+Linux users may need to use `sudo` to run Docker.
 
-A minimum of 4 GB memory is required to run the entire MEMA vignettes. Memmory allocation adjustment for Docker on Ubuntu is not needed as the default is "unlimited". On Mac and Windows it is done manually.
+We recommend a minimum of 8 GB memory to run the  MEMA vignettes. On Mac and Windows the memory needs to be manually allocated.
 
-On Mac, click Docker whale icon in Launchpad or Applications folder to start Docker, then click Docker icon in top status bar and choose Preferences -> Advanced to increase Memory to 4.0 GB. 
+On Mac, click Docker whale icon in Launchpad or Applications folder to start Docker, then click Docker icon in top status bar and choose Preferences -> Advanced to increase Memory to 8.0 GB. 
 
-On Windows, double-click Open Oracle VM VirtualBox icon on desktop, choose Settings -> System -> Motherboard to increase Base Memory to 4096 MB. 
+On Windows, double-click Open Oracle VM VirtualBox icon on desktop, choose Settings -> System -> Motherboard to increase Base Memory to 8192 MB. 
+
+To run the container execute the following command:
 
 ```
 [sudo] docker run -d -p <an available port>:8787 ucbd2k/mema
@@ -36,33 +38,26 @@ Typically one can use port 8787 if not already used by another application. In t
 [sudo] docker run -d -p 8787:8787 ucbd2k/mema
 ```
 
----
-To run mema docker, open a browser and type in the address bar ``<Host URL>:<available port as specified>`` to start RStudio. Enter `rstudio` for both username and password. For example `http://localhost:8787` on Mac or Linux systems when 8787 port is used.
+To start an RStudio session, open a browser and type in the address bar ``<Host URL>:<available port as specified>``. Enter `rstudio` for both username and password. For example `http://localhost:8787` on Mac or Linux systems when 8787 port is used.
 
 Host URL on Ubuntu and Mac is `localhost`, if accessed locally. On Windows, the IP is shown when Docker is launched by double-clicking the Docker Quickstart Terminal icon on desktop, or it can be obtained from the output of `docker-machine ls` in the interactive shell window.
 
-To execute MEMA package vignettes, you need to have a Synapse account (register at [`https://www.synapse.org/`](https://www.synapse.org/#!RegisterAccount:0) and then create `.synapseConfig` file with your login credentials. For example, if the Synapse user account is `john.doe@fake.com` and password is `pass123`, the following R command executed in the R studio will create the appropriate config file:
+To execute MEMA package vignettes, you need to have a Synapse account (register at [`https://www.synapse.org/`](https://www.synapse.org/#!RegisterAccount:0) and then create `.synapseConfig` file with your login credentials. For example, if the Synapse user account is `john.doe@fake.com` and password is `pass123`, the following R command executed in the RStudio session will create the appropriate config file:
 ```
-<<<<<<< HEAD
 cat(file="~/.synapseConfig", "[authentication]", "\n", 
     "username:john.doe@fake.com", "\n", 
     "password:pass123", "\n")
 
 ```
-Now you can run the current MEMA vignettes. One way to do this is to download current vignettes from github and opening them in  RStudio.
+Now you can run the current MEMA vignettes. One way to do this is to download current vignettes from github and open them in  RStudio. First download vignettes into the local directory
 ```
 download.file("https://raw.githubusercontent.com/MEP-LINCS/MEMA/master/vignettes/Preprocess-Levels1and2.Rmd",
     destfile="~/Preprocess-Levels1and2.Rmd")
 download.file("https://raw.githubusercontent.com/MEP-LINCS/MEMA/master/vignettes/Preprocess-Levels3and4.Rmd",
-destfile="~/Preprocess-Levels1and2.Rmd")
+destfile="~/Preprocess-Levels3and4.Rmd")
 ```
+Vignettes can now be opened by clicking on the file link in the RStudio file browser. The code can be exectued whole via RStudio knit toolbar ("Knit to HTML"), or by executing individual chunks of code interactively. When using knit toolbar, RStudio will first update some packages and then create the output html and open it in the browser.
 
-=======
-cat(file="~/.synapseConfig", "[authentication]", "\n", "username:john.doe@fake.com", "\n", "password:pass123", "\n")
-```
-Now you can run the vignettes by opening MEMA vignettes files in the RStudio session(
-/usr/local/lib/R/site-library/MEMA/doc/Preprocess-Levels1and2.Rmd and /usr/local/lib/R/site-library/MEMA/doc/Preprocess-Levels3and4.Rmd) and execute chuncks of code or the whole markdown scripts as described in the MEMA package page.
->>>>>>> origin/master
 
 
 
