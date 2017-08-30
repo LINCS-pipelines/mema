@@ -1,6 +1,6 @@
-### mema: Docker container for running MEMA vignettes in RStudio
+### mema: Docker container for using MEMA R package in RStudio
 
-This mema docker image was built based on the validated MEMA R package v1.0.1 (released on 2017-05-16) to run all the R code in the vignettes provided by MEP-LINCS on 2017-05-17 at [`https://github.com/MEP-LINCS/MEMA/tree/master/vignettes`](https://github.com/MEP-LINCS/MEMA/tree/master/vignettes) inside a virtual RStudio.
+This mema docker image was built based on the validated MEMA R package v1.0.1 (released on 2017-05-16) to run all the R code in the vignettes created by MEP-LINCS project on 2017-05-17 at [`https://github.com/MEP-LINCS/MEMA/tree/master/vignettes`](https://github.com/MEP-LINCS/MEMA/tree/master/vignettes) inside a virtual RStudio.
 
 The container has been tested on Linux (Ubuntu 14.04 and 16.04), macOS (10.11.6), and Windows (Windows 7 Enterprise). 
 
