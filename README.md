@@ -2,7 +2,7 @@
 
 This mema docker image was built based on the validated MEMA R package v1.0.1 (released on 2017-05-16) to run all the R code in the vignettes provided by MEP-LINCS on 2017-05-17 at [`https://github.com/MEP-LINCS/MEMA/tree/master/vignettes`](https://github.com/MEP-LINCS/MEMA/tree/master/vignettes) inside a virtual RStudio.
 
-The docker has been tested on Linux (Ubuntu 14.04 and 16.04), macOS (10.11.6), and Windows (Windows 7 Enterprise). 
+The container has been tested on Linux (Ubuntu 14.04 and 16.04), macOS (10.11.6), and Windows (Windows 7 Enterprise). 
 
 ---
 #### Installation of Docker
@@ -17,10 +17,8 @@ Windows: follow [`the instructions`](https://docs.docker.com/toolbox/toolbox_ins
 ---
 To obtain the docker image and run the container,
 ```
-[sudo] docker pull ucbd2k/mema
+[sudo] docker pull ucbd2k/mema:stable
 ```
-Linux users may need to use `sudo` to run Docker.
-
 We recommend a minimum of 8 GB memory to run the  MEMA vignettes. On Mac and Windows the memory needs to be manually allocated.
 
 On Mac, click Docker whale icon in Launchpad or Applications folder to start Docker, then click Docker icon in top status bar and choose Preferences -> Advanced to increase Memory to 8.0 GB. 
@@ -30,12 +28,12 @@ On Windows, double-click Open Oracle VM VirtualBox icon on desktop, choose Setti
 To run the container execute the following command:
 
 ```
-[sudo] docker run -d -p <an available port>:8787 ucbd2k/mema
+[sudo] docker run -d -p <an available port>:8787 ucbd2k/mema:stable
 ```
 Typically one can use port 8787 if not already used by another application. In that case the commad is
 
 ```
-[sudo] docker run -d -p 8787:8787 ucbd2k/mema
+[sudo] docker run -d -p 8787:8787 ucbd2k/mema:stable
 ```
 
 To start an RStudio session, open a browser and type in the address bar ``<Host URL>:<available port as specified>``. Enter `rstudio` for both username and password. For example `http://localhost:8787` on Mac or Linux systems when 8787 port is used.
@@ -49,14 +47,16 @@ cat(file="~/.synapseConfig", "[authentication]", "\n",
     "password:pass123", "\n")
 
 ```
-Now you can run the current MEMA vignettes. One way to do this is to download current vignettes from github and open them in  RStudio. First download vignettes into the local directory
+Now you can run the current MEMA vignettes packaged within the container. To do this, open the Rmd files in the vignettes_MEP-LINCS_2017-05-17 directory in the RStudio file browser.  The code can be exectued whole via RStudio knit toolbar ("Knit to HTML"), or by executing individual chunks of code interactively. 
+
+To download and run the most recent version of vignettes from github, execute following commands in RStudio. 
 ```
 download.file("https://raw.githubusercontent.com/MEP-LINCS/MEMA/master/vignettes/Preprocess-Levels1and2.Rmd",
     destfile="~/Preprocess-Levels1and2.Rmd")
 download.file("https://raw.githubusercontent.com/MEP-LINCS/MEMA/master/vignettes/Preprocess-Levels3and4.Rmd",
 destfile="~/Preprocess-Levels3and4.Rmd")
 ```
-Vignettes can now be opened by clicking on the file link in the RStudio file browser. The code can be exectued whole via RStudio knit toolbar ("Knit to HTML"), or by executing individual chunks of code interactively. When using knit toolbar, RStudio will first update some packages and then create the output html and open it in the browser.
+Vignettes can now be opened by clicking on the file link in the RStudio file browser.  
 
 
 
