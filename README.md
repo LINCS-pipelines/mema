@@ -19,6 +19,8 @@ To obtain the docker image and run the container,
 ```
 [sudo] docker pull ucbd2k/mema:stable
 ```
+Please note that on Mac and Linux systems using docker without "sudo" requires post-installation setup. We noticed that in some cases misconfiguration may lead to a situation in which the container runs seemingly fine, but the code in vignettes fails to execute properly. Using "sudo" in these situations solved the problem.
+
 We recommend a minimum of 8 GB memory to run the  MEMA vignettes. On Mac and Windows the memory needs to be manually allocated.
 
 On Mac, click Docker whale icon in Launchpad or Applications folder to start Docker, then click Docker icon in top status bar and choose Preferences -> Advanced to increase Memory to 8.0 GB. 
